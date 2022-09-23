@@ -1,0 +1,30 @@
+.main{
+    display: flex;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 100px;
+    padding: 20px;
+    background-color: rgb(243, 238, 238);
+}
+
+.form{
+    background-color: white;
+    color: black !important;
+    padding: 10px 10px;
+    height: 600px;
+    position: relative;
+    border-radius: 10px;
+    
+}
+
+.form h3{
+    margin-bottom: 20px;
+}
+
+.btn{
+    position: absolute;
+    bottom: 0;
+    width: 96% !important;
+    
+    
+}
