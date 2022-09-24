@@ -2,7 +2,5 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/api/price": "pages/api/price.js",
-  "/api/coinbyfiat": "pages/api/coinbyfiat.js",
   "/": "pages/index.js"
 }
