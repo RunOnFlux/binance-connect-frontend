@@ -62,10 +62,11 @@ const BuyCrypto = () => {
   const [maxLimit, setmaxLimit] = useState(0);
   const [opentxModal, setopentxModal] = useState(false);
   const [txdata, settxdata] = useState({});
+  const [price, setPrice] = useState(0);
   //   useGetIpAddress();
   const { fiatList, loading: fiatLoading } = useFiatList();
   const { coinList, loading: coinLoading } = useGetCoinByFiat(selectedAsset);
-  const { price } = usePrice(selectedAsset, selectedCrypto, fiatValue);
+  // const { price } = usePrice(selectedAsset, selectedCrypto, fiatValue);
 
   const { fullInfo } = useGetFullInfo();
 
@@ -126,6 +127,17 @@ const BuyCrypto = () => {
       }
     }
   }, [link]);
+
+  useMemo(() => {
+    if (selectedAsset && selectedCrypto) {
+      const filterArray = coinList.filter(
+        (value) =>
+          value.fiatCurrency === selectedAsset &&
+          selectedCrypto === value.cryptoCurrency
+      );
+      setPrice(filterArray[0]?.quotation);
+    }
+  }, [selectedAsset, selectedCrypto]);
 
   console.log("txdata", txdata);
 
@@ -213,9 +225,7 @@ const BuyCrypto = () => {
                     cursor='pointer'
                     // disabled={fiatList.length === 0}
                     onClick={() => {
-                      if (fiatList.length !== 0) {
-                        setSelectClicked(true);
-                      }
+                      setSelectClicked(true);
                     }}
                   >
                     <InputElement
@@ -250,9 +260,7 @@ const BuyCrypto = () => {
                     mt={1}
                     cursor='pointer'
                     onClick={() => {
-                      if (coinList.length !== 0) {
-                        setCryptoSelectClicked(true);
-                      }
+                      setCryptoSelectClicked(true);
                     }}
                   >
                     <InputElement
