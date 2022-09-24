@@ -29,18 +29,10 @@ const InputElement = ({ icon, asset }) => {
           width='20px'
           // src={asset === "EUR" ? EUR.src : asset === "USD" ? USD.src : icon.src}
           src={
-            asset === "SHIB"
-              ? SHIB.src
-              : asset === "BUSD"
-              ? BUSD.src
-              : asset === "Select Fiat"
+            asset === "Select Fiat"
               ? ""
               : asset === "Select Crypto"
               ? ""
-              : asset === "EUR"
-              ? EUR.src
-              : asset === "USD"
-              ? USD.src
               : tokenImages[`${asset}`]
           }
         />
