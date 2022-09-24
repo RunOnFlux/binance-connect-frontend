@@ -24,6 +24,7 @@ import useGetNetwork from "../../hooks/useGetNetworks";
 import NetworkModal from "./NetworkModal";
 import SHIB from "../../assets/shib.png";
 import BUSD from "../../assets/busd.png";
+import { tokenImages } from "../../utils/helper";
 
 const WalletPage = ({
   walletPage,
@@ -102,13 +103,7 @@ const WalletPage = ({
                   height='24px'
                   width='24px'
                   mr={1}
-                  src={
-                    selectedCrypto === "SHIB"
-                      ? SHIB.src
-                      : selectedCrypto === "BUSD"
-                      ? BUSD.src
-                      : `https://cryptoicons.org/api/icon/${selectedCrypto?.toLowerCase()}/200`
-                  }
+                  src={tokenImages[selectedCrypto]}
                 />
                 <Text>{selectedCrypto}</Text>
               </Flex>
