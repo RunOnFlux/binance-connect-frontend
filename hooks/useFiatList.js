@@ -34,6 +34,7 @@ const useFiatList = () => {
 
   useMemo(async () => {
     if (ipAddress && !error) {
+      setloading(true);
       const data = await axios.post("/api/fiatlist", {
         ip: ipAddress,
       });
@@ -42,9 +43,9 @@ const useFiatList = () => {
 
       if (data.status === 200) {
         setFiatList(data.data.list);
-        console.log("hery");
+        setloading(false);
       } else {
-        console.log("toast", data.data.msg);
+        setloading(false);
 
         setFiatList([]);
       }
