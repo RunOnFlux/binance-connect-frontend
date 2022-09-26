@@ -3,5 +3,6 @@
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/": "pages/index.js",
-  "/api/coinbyfiat": "pages/api/coinbyfiat.js"
+  "/api/coininfo": "pages/api/coininfo.js",
+  "/api/fiatlist": "pages/api/fiatlist.js"
 }
