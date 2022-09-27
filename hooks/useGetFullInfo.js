@@ -17,8 +17,22 @@ const useGetFullInfo = () => {
           ip: ipAddress,
         });
 
+        console.log("newnew", data.data.coininfo);
+
         if (data.status === 200) {
-          setFullInfo(data.data.coininfo);
+          if (data.data.coininfo.error) {
+            toast.error(data.data.coininfo.error, {
+              position: "top-right",
+              autoClose: 10000,
+              hideProgressBar: true,
+              closeOnClick: true,
+              pauseOnHover: true,
+              draggable: true,
+              progress: undefined,
+            });
+          } else {
+            setFullInfo(data.data.coininfo);
+          }
         } else {
           toast.error(data.data.msg, {
             position: "top-right",
