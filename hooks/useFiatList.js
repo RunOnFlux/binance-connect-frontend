@@ -39,11 +39,14 @@ const useFiatList = () => {
         ip: ipAddress,
       });
 
-      console.log(data);
-
       if (data.status === 200) {
-        setFiatList(data.data.list);
-        setloading(false);
+        console.log("newdata", data);
+        if (data.data.list.error) {
+          console.log("error occurred");
+        } else {
+          setFiatList(data.data.list);
+          setloading(false);
+        }
       } else {
         setloading(false);
 
