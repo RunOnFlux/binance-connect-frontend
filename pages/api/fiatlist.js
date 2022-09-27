@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   });
   var config = {
     method: "post",
-    url: "https://fluxnodeservice.com/api/binance/get_coin_info",
+    url: "https://fluxnodeservice.com/api/binance/get_coin_info/fiat",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
@@ -20,10 +20,12 @@ export default async function handler(req, res) {
   const fiat = await axios(config);
 
   if (fiat.data.success === "true") {
-    const Fiat = extractFiat(fiat.data.data.pair_list);
-    const FiatList = getUniqueArray(Fiat);
+    // const Fiat = extractFiat(fiat.data.data.pair_list);
+    // const FiatList = getUniqueArray(Fiat);
 
-    res.status(200).json({ list: FiatList });
+    console.log("newfiat", fiat.data.data);
+
+    res.status(200).json({ list: fiat.data.data });
   } else if (fiat.data.success === "false") {
     res.status(400).json({ msg: fiat.data.data.message });
   }
