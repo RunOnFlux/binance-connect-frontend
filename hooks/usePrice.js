@@ -13,13 +13,9 @@ const usePrice = (fiat, crypto, amount) => {
           crypto: crypto,
         });
 
-        console.log("pricelist", data);
-
         setPrice(data.data.price);
         // setPrice2(data.data.price2);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     }
   }, [fiat, crypto]);
 

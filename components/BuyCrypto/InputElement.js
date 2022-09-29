@@ -10,7 +10,6 @@ import { tokenImages } from "../../utils/helper";
 // import Image from "next/image";
 
 const InputElement = ({ icon, asset }) => {
-  console.log(asset);
   return (
     <React.Fragment>
       <Flex zIndex={0} alignItems='center' mr={20}>

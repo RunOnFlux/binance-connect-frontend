@@ -24,13 +24,10 @@ const useFiatList = () => {
   const extractFiat = (array) => {
     let Fiats = [];
     for (let i = 0; i < array.length; i++) {
-      console.log(array[i]);
       Fiats.push(array[i].fiatCurrency);
     }
     return Fiats;
   };
-
-  console.log(fiatList);
 
   useMemo(async () => {
     if (ipAddress && !error) {
@@ -40,9 +37,7 @@ const useFiatList = () => {
       });
 
       if (data.status === 200) {
-        console.log("newdata", data);
         if (data.data.list.error) {
-          console.log("error occurred");
         } else {
           setFiatList(data.data.list);
           setloading(false);
