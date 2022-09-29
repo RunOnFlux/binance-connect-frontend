@@ -45,20 +45,16 @@ const WalletPage = ({
 
   const { networkList } = useGetNetwork(selectedCrypto);
 
-  console.log("networkList", networkList);
   //   useGetIpAddress();
 
   useMemo(() => {
     if (networkRegex && walletAddress) {
       const regex = new RegExp(networkRegex);
-      console.log(networkRegex);
-      console.log(regex.test(walletAddress));
+
       setisWalletValid(regex.test(walletAddress));
       // setNetworkRegex()
     }
   }, [networkRegex, walletAddress]);
-
-  console.log("wallet", networkRegex);
 
   return (
     // <ScaleFade in={walletPage}>

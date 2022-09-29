@@ -49,7 +49,6 @@ const useGetNetwork = (selectedCrypto) => {
         //   alert(network.data.data.message);
         // }
       } catch (err) {
-        console.log(err);
         setloading(false);
       }
     }

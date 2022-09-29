@@ -48,7 +48,6 @@ const useGetCoinByFiat = (selectedAsset) => {
         //     alert(coin.data.data.message);
         //   }
       } catch (err) {
-        console.log(err);
         setloading(false);
       }
     }

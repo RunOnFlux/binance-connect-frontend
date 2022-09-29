@@ -23,8 +23,6 @@ export default async function handler(req, res) {
     // const Fiat = extractFiat(fiat.data.data.pair_list);
     // const FiatList = getUniqueArray(Fiat);
 
-    console.log("newfiat", fiat.data.data);
-
     res.status(200).json({ list: fiat.data.data });
   } else if (fiat.data.success === "false") {
     res.status(400).json({ msg: fiat.data.data.message });

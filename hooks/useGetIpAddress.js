@@ -13,7 +13,6 @@ const useGetIpAddress = () => {
         );
 
         const ip2 = await axios.get("/api/ip");
-        console.log(ip2.data.ip);
 
         setIpAddress(ip.data.ip);
         setError(false);
@@ -27,7 +26,6 @@ const useGetIpAddress = () => {
         setError(false);
       }
     } catch (err) {
-      console.log(err);
       setIpAddress("");
       setError(true);
     }

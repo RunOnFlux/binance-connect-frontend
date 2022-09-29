@@ -45,8 +45,6 @@ const BuyCrypto = () => {
   const router = useRouter();
   const link = router.query;
 
-  console.log("link", link);
-
   const [walletPage, setWalletPage] = useState(false);
   const [thankyouPage, setthankyouPage] = useState(false);
 
@@ -70,13 +68,8 @@ const BuyCrypto = () => {
 
   const { fullInfo } = useGetFullInfo();
 
-  console.log(coinList);
-  console.log("price", price);
-  console.log("fullinfo", fullInfo);
-
   useMemo(() => {
     if (selectedAsset && selectedCrypto && fullInfo) {
-      console.log("pair_start");
       const pair = fullInfo.pair_list.filter(
         (pair) =>
           pair.cryptoCurrency === selectedCrypto &&
@@ -84,7 +77,6 @@ const BuyCrypto = () => {
       );
       setminLimit(pair[0].minLimit);
       setmaxLimit(pair[0].maxLimit);
-      console.log("found_pair", pair);
     }
   }, [selectedCrypto, selectedAsset, fullInfo]);
 
@@ -113,14 +105,11 @@ const BuyCrypto = () => {
     }
   };
 
-  console.log("redirectUrl", redirectUrl);
-
   useMemo(async () => {
     if (link.merchantorderid) {
       try {
         const data = await getOrder(link.merchantorderid);
 
-        console.log("link", data);
         settxdata(data);
       } catch (err) {
         settxdata({});
@@ -139,15 +128,12 @@ const BuyCrypto = () => {
     }
   }, [selectedAsset, selectedCrypto]);
 
-  console.log("txdata", txdata);
-
   useMemo(() => {
     if (Object.keys(txdata).length !== 0) {
       setopentxModal(true);
     }
   }, [txdata]);
 
-  console.log("data", Object.keys(txdata).length === 0);
   return (
     <>
       {walletPage ? (

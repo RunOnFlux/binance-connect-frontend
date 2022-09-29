@@ -17,8 +17,6 @@ const useGetFullInfo = () => {
           ip: ipAddress,
         });
 
-        console.log("newnew", data.data.coininfo);
-
         if (data.status === 200) {
           if (data.data.coininfo.error) {
             toast.error(data.data.coininfo.error, {

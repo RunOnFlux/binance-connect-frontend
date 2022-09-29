@@ -46,8 +46,6 @@ const AssetModal = ({
     }
   };
 
-  console.log(list);
-
   const { searchResult } = useSearch(keyword, list, fiat);
 
   return (
@@ -110,7 +108,6 @@ const AssetModal = ({
       ) : keyword && fiat ? (
         <Flex overflowY='scroll' flexDirection='column'>
           {searchResult?.map((asset, index) => {
-            console.log(asset);
             return (
               <Flex
                 onClick={() => handleSelect(asset)}
@@ -152,7 +149,6 @@ const AssetModal = ({
       ) : fiat ? (
         <Flex overflowY='scroll' flexDirection='column'>
           {list?.map((asset, index) => {
-            console.log(asset);
             return (
               <Flex
                 onClick={() => handleSelect(asset)}
