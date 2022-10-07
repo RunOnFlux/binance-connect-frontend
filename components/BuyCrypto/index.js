@@ -37,9 +37,9 @@ import TransactionModals from "../Modals/TransactionModals";
 
 const BuyCrypto = () => {
   const [selectClicked, setSelectClicked] = useState(false);
-  const [selectedAsset, setSelectedAsset] = useState("");
+  const [selectedAsset, setSelectedAsset] = useState("USD");
   const [isFiatSelected, setIsFiatSelected] = useState(false);
-  const [selectedCrypto, setSelectedCrypto] = useState("");
+  const [selectedCrypto, setSelectedCrypto] = useState("FLUX");
   const [cryptoSelectClicked, setCryptoSelectClicked] = useState(false);
   const [networkRegex, setNetworkRegex] = useState("");
   const router = useRouter();
@@ -69,16 +69,18 @@ const BuyCrypto = () => {
   const { fullInfo } = useGetFullInfo();
 
   useMemo(() => {
-    if (selectedAsset && selectedCrypto && fullInfo) {
-      const pair = fullInfo.pair_list.filter(
+    if (selectedAsset && selectedCrypto && fullInfo.pair_list) {
+      const pair = fullInfo.pair_list?.filter(
         (pair) =>
           pair.cryptoCurrency === selectedCrypto &&
           pair.fiatCurrency === selectedAsset
       );
-      setminLimit(pair[0].minLimit);
-      setmaxLimit(pair[0].maxLimit);
+      if (fullInfo.pair_list) {
+        setminLimit(pair[0].minLimit);
+        setmaxLimit(pair[0].maxLimit);
+      }
     }
-  }, [selectedCrypto, selectedAsset, fullInfo]);
+  }, [selectedCrypto, selectedAsset, fullInfo.pair_list]);
 
   useMemo(() => {
     if (fiatValue) {

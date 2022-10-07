@@ -21,6 +21,7 @@ const useGetFullInfo = () => {
           if (data.data.coininfo.error) {
             toast.error(data.data.coininfo.error, {
               position: "top-right",
+              toastId: "error1",
               autoClose: 10000,
               hideProgressBar: true,
               closeOnClick: true,
