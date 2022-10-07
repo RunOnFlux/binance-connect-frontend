@@ -39,7 +39,7 @@ const InputElement = ({ icon, asset }) => {
           // mr={}
           whiteSpace='nowrap'
           zIndex={1}
-          fontWeight='bold'
+          fontWeight='500'
           color='black'
         >
           {asset}

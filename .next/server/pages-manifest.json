@@ -2,5 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.js"
+  "/": "pages/index.js",
+  "/api/fiatlist": "pages/api/fiatlist.js",
+  "/api/coinbyfiat": "pages/api/coinbyfiat.js",
+  "/api/coininfo": "pages/api/coininfo.js"
 }
