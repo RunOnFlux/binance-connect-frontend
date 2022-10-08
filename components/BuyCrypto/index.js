@@ -128,7 +128,7 @@ const BuyCrypto = () => {
       );
       setPrice(filterArray[0]?.quotation);
     }
-  }, [selectedAsset, selectedCrypto]);
+  }, [selectedAsset, selectedCrypto, coinList]);
 
   useMemo(() => {
     if (Object.keys(txdata).length !== 0) {
