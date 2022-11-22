@@ -10,7 +10,7 @@ export default async function handler(req, res) {
 
   var config = {
     method: "post",
-    url: `https://binanceconnectbackend.runonflux.io/api/binance/get_query_order_list`,
+    url: `https://binanceconnectbackend.runonflux.io:8787/api/binance/get_query_order_list`,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
