@@ -7,7 +7,7 @@ export default async function handler(req, res) {
 
   var config = {
     method: "post",
-    url: "https://fluxnodeservice.com/api/binance/get_trade",
+    url: "https://binanceconnectbackend.runonflux.io/api/binance/get_trade",
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },

@@ -29,7 +29,7 @@ export default async function handler(req, res) {
 
   var config = {
     method: "post",
-    url: `https://fluxnodeservice.com/api/binance/get_coin_info/fiat/${req.body.asset}`,
+    url: `https://binanceconnectbackend.runonflux.io/api/binance/get_coin_info/fiat/${req.body.asset}`,
     headers: {
       "Content-Type": "application/x-www-form-urlencoded",
     },
