@@ -38,7 +38,7 @@ const Footer = () => {
             <Link href='https://twitter.com/RunOnFlux' isExternal mr={3}>
               <Img w='18px' src={twitter.src} />
             </Link>
-            <Link href='https://discord.io/runonflux' isExternal mr={3}>
+            <Link href='https://discord.gg/runonflux' isExternal mr={3}>
               <Img w='18px' src={discord.src} />
             </Link>
             <Link href='https://www.facebook.com/runonflux' isExternal mr={3}>
