@@ -895,7 +895,7 @@ const MobileNav = ({ setHamburgerClicked, hamburgerClicked }) => {
               <Link href='https://twitter.com/RunOnFlux' isExternal>
                 <Img w='18px' src={twitter.src} />
               </Link>
-              <Link href='https://discord.io/runonflux' isExternal>
+              <Link href='https://discord.gg/runonflux' isExternal>
                 <Img w='18px' src={discord.src} />
               </Link>
               <Link href='https://www.facebook.com/runonflux' isExternal>
